@@ -15,41 +15,41 @@ namespace _1.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IUsuarioData _usuarioData;
-        private readonly IUsuarioDomain _usuarioDomain;
+        private readonly IUserData _userData;
+        private readonly IUserDomain _userDomain;
         private readonly IMapper _mapper;
         
-        public UsuarioController(IUsuarioData usuarioData,IUsuarioDomain usuarioDomain, IMapper mapper)
+        public UserController(IUserData userData,IUserDomain userDomain, IMapper mapper)
         {
-            _usuarioData = usuarioData;
-            _usuarioDomain = usuarioDomain;
+            _userData = userData;
+            _userDomain = userDomain;
             _mapper = mapper;
         }
         
-        // GET: api/Usuario
+        // GET: api/User
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var data = await _usuarioData.getAllAsync();
-            var result = _mapper.Map<List<Usuario>,List<UsuarioResponse>>(data);
+            var data = await _userData.getAllAsync();
+            var result = _mapper.Map<List<User>,List<UserResponse>>(data);
             return Ok(result);
         }
-        // POST: api/Usuario
+        // POST: api/User
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] UsuarioRequest data)
+        public async Task<IActionResult> PostAsync([FromBody] UserRequest data)
         {
             try
            {
                if (!ModelState.IsValid) return BadRequest();
                
-               var tutorial = _mapper.Map<UsuarioRequest, Usuario>(data);
+               var tutorial = _mapper.Map<UserRequest, User>(data);
                
-               var result = await _usuarioDomain.SaveAsync(tutorial);
+               var result = await _userDomain.SaveAsync(tutorial);
 
                //TODO
-               return Created("api/Usuario", result);
+               return Created("api/User", result);
            }
            catch (Exception ex)
            {

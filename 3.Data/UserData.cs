@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _3.Data;
 
-public class UsuarioData : IUsuarioData
+public class UserData : IUserData
 {
     private DriveSafeDBContext _driveSafeDbcontext;
-    public UsuarioData(DriveSafeDBContext driveSafeDbContext)
+    public UserData(DriveSafeDBContext driveSafeDbContext)
     {
         _driveSafeDbcontext = driveSafeDbContext;
     }
-    public async Task<int> SaveAsync(Usuario data)
+    public async Task<int> SaveAsync(User data)
     {
         data.IsActive = true;
 
@@ -19,7 +19,7 @@ public class UsuarioData : IUsuarioData
         {
             try
             {
-                _driveSafeDbcontext.Usuarios.Add(data);
+                _driveSafeDbcontext.Users.Add(data);
                 await _driveSafeDbcontext.SaveChangesAsync();
                 await transaction.CommitAsync();
             }
@@ -33,8 +33,8 @@ public class UsuarioData : IUsuarioData
         return data.Id;
     }
 
-    public async Task<List<Usuario>> getAllAsync()
+    public async Task<List<User>> getAllAsync()
     {
-        return await _driveSafeDbcontext.Usuarios.Where(u => u.IsActive).ToListAsync();
+        return await _driveSafeDbcontext.Users.Where(u => u.IsActive).ToListAsync();
     }
 }

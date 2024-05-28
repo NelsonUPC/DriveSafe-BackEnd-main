@@ -6,10 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Domain", "2.Domain\2.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Data", "3.Data\3.Data.csproj", "{5132EB59-D8A7-4B26-849A-56D1C8A2C750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.DomainTest", "2.DomainTest\2.DomainTest.csproj", "{208B283A-53B8-4593-8BFA-E632FED473B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Data.Test", "3.Data.Test\3.Data.Test.csproj", "{A51CA2A1-1FE4-41EA-8466-D69F4C576A3C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,13 +24,5 @@ Global
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Release|Any CPU.Build.0 = Release|Any CPU
-		{208B283A-53B8-4593-8BFA-E632FED473B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{208B283A-53B8-4593-8BFA-E632FED473B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{208B283A-53B8-4593-8BFA-E632FED473B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{208B283A-53B8-4593-8BFA-E632FED473B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A51CA2A1-1FE4-41EA-8466-D69F4C576A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A51CA2A1-1FE4-41EA-8466-D69F4C576A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A51CA2A1-1FE4-41EA-8466-D69F4C576A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A51CA2A1-1FE4-41EA-8466-D69F4C576A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

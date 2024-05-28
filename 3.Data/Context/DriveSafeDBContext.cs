@@ -8,7 +8,7 @@ public class DriveSafeDBContext : DbContext
     public DriveSafeDBContext(){}
     public DriveSafeDBContext(DbContextOptions<DriveSafeDBContext> options) : base(options) { }
     
-    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<User> Users { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -24,6 +24,6 @@ public class DriveSafeDBContext : DbContext
     {
         base.OnModelCreating(builder);
         
-        builder.Entity<Usuario>().ToTable("Usuarios");
+        builder.Entity<User>().ToTable("Users");
     }
 }

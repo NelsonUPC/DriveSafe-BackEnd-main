@@ -1,21 +1,21 @@
 namespace _1.API.Request;
 
-public class UsuarioRequest
+public class UserRequest
 {
     [Microsoft.Build.Framework.Required]
     public int Id { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string nombres { get; set; }
+    public string name { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string apellidos { get; set; }
+    public string last_name { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string fecha_nacimiento { get; set; }
+    public string birthdate { get; set; }
     [Microsoft.Build.Framework.Required]
-    public int telefono { get; set; }
+    public int cellphone { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string correo { get; set; }
+    public string gmail { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string contrasenia { get; set; }
+    public string password { get; set; }
     [Microsoft.Build.Framework.Required]
-    public string tipo { get; set; }
+    public string type { get; set; }
 }

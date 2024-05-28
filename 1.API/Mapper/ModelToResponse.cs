@@ -8,6 +8,6 @@ public class ModelToResponse :  Profile
 {
     public ModelToResponse()
     {
-        CreateMap<Usuario, UsuarioResponse>();
+        CreateMap<User, UserResponse>();
     }
 }

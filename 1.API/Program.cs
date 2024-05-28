@@ -13,8 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUsuarioData, UsuarioData>();
-builder.Services.AddScoped<IUsuarioDomain, UsuarioDomain>();
+builder.Services.AddScoped<IUserData, UserData>();
+builder.Services.AddScoped<IUserDomain, UserDomain>();
 
 builder.Services.AddAutoMapper(typeof(RequestToModel)
     ,typeof(ModelToRequest)

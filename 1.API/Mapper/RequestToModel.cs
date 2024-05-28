@@ -8,6 +8,6 @@ public class RequestToModel : Profile
 {
     public RequestToModel()
     {
-        CreateMap<UsuarioRequest, Usuario>();
+        CreateMap<UserRequest, User>();
     }
 }
