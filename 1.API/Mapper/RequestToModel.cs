@@ -9,5 +9,8 @@ public class RequestToModel : Profile
     public RequestToModel()
     {
         CreateMap<UserRequest, User>();
+        CreateMap<VehicleRequest, Vehicle>();
+        CreateMap<RentRequest, Rent>();
+        CreateMap<MaintenanceRequest, Maintenance>();
     }
 }

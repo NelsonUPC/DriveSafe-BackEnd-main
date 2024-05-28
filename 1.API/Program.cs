@@ -16,6 +16,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserData, UserData>();
 builder.Services.AddScoped<IUserDomain, UserDomain>();
 
+builder.Services.AddScoped<IVehicleData, VehicleData>();
+builder.Services.AddScoped<IVehicleDomain, VehicleDomain>();
+
+builder.Services.AddScoped<IRentData, RentData>();
+builder.Services.AddScoped<IRentDomain, RentDomain>();
+
+builder.Services.AddScoped<IMaintenanceData, MaintenanceData>();
+builder.Services.AddScoped<IMaintenanceDomain, MaintenanceDomain>();
+
 builder.Services.AddAutoMapper(typeof(RequestToModel)
     ,typeof(ModelToRequest)
     ,typeof(ModelToResponse));
