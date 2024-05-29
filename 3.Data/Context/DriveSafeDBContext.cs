@@ -29,5 +29,7 @@ public class DriveSafeDBContext : DbContext
         
         builder.Entity<User>().ToTable("Users");
         builder.Entity<Vehicle>().ToTable("Vehicles");
+        builder.Entity<Rent>().ToTable("Rents");
+        builder.Entity<Maintenance>().ToTable("Maintenances");
     }
 }

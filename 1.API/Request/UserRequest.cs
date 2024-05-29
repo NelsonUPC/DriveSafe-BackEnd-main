@@ -3,7 +3,7 @@ namespace _1.API.Request;
 public class UserRequest
 {
     [Microsoft.Build.Framework.Required]
-    public int Id { get; set; }
+    public int id { get; set; }
     [Microsoft.Build.Framework.Required]
     public string name { get; set; }
     [Microsoft.Build.Framework.Required]

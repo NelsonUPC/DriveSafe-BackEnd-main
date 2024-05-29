@@ -2,6 +2,6 @@ namespace _3.Data.Models;
 
 public class BaseModel
 {
-    public int Id { get; set; }
+    public int id { get; set; }
     public bool IsActive { get; set; } = true;
 }

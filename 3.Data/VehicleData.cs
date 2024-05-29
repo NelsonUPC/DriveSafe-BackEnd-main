@@ -29,7 +29,7 @@ public class VehicleData : IVehicleData
                 throw;
             }
         }
-        return data.Id;
+        return data.id;
     }
 
     public async Task<List<Vehicle>> getAllAsync()

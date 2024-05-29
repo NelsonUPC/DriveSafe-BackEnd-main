@@ -28,7 +28,7 @@ public class RentData : IRentData
                 throw;
             }
         }
-        return data.Id;
+        return data.id;
     }
 
     public async Task<List<Rent>> getAllAsync()

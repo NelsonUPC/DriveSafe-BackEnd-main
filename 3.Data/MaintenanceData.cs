@@ -28,7 +28,7 @@ public class MaintenanceData : IMaintenanceData
                 throw;
             }
         }
-        return data.Id;
+        return data.id;
     }
 
     public async Task<List<Maintenance>> getAllAsync()

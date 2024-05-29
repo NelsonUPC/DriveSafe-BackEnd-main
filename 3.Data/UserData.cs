@@ -28,7 +28,7 @@ public class UserData : IUserData
                 throw;
             }
         }
-        return data.Id;
+        return data.id;
     }
 
     public async Task<List<User>> getAllAsync()

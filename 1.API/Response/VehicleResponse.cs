@@ -2,7 +2,7 @@ namespace _1.API.Response;
 
 public class VehicleResponse
 {
-    public int Id { get; set; }
+    public int id { get; set; }
     public string brand { get; set; }
     public string model { get; set; }
     public int maximum_speed { get; set; }

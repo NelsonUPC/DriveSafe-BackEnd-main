@@ -2,7 +2,7 @@ namespace _1.API.Response;
 
 public class MaintenanceResponse
 {
-    public int Id { get; set; }
+    public int id { get; set; }
     public string type_problem { get; set; }
     public string title { get; set; }
     public string description { get; set; }

@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -28,6 +27,18 @@ builder.Services.AddScoped<IMaintenanceDomain, MaintenanceDomain>();
 builder.Services.AddAutoMapper(typeof(RequestToModel)
     ,typeof(ModelToRequest)
     ,typeof(ModelToResponse));
+
+//CORS
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
 
 // Connect DB
 var connectionString = builder.Configuration.GetConnectionString("DriveSafeDB");
@@ -55,6 +66,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAllOrigins"); //CORS
 
 app.UseHttpsRedirection();
 
