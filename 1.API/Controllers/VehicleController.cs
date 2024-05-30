@@ -42,6 +42,16 @@ namespace _1.API.Controllers
             return Ok(result);
         }
         
+        //GET: api/Vehicle/GetByUserId/5
+        [HttpGet("GetByUserId/{id}")]
+        public async Task<IActionResult> GetByUserIdAsync(int id)
+        {
+            var data = await _vehicleData.GetByUserIdAsync(id);
+            var result = _mapper.Map<Vehicle,VehicleResponse>(data);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+        
         // POST: api/Vehicle
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] VehicleRequest data)
@@ -62,6 +72,22 @@ namespace _1.API.Controllers
                //loggear txt,base,cloud 
                return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
            }
+        }
+        
+        //DELETE: api/Vehicle/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            try
+            {
+                var result = await _vehicleDomain.DeleteAsync(id);
+                if (!result) return NotFound();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
+            }
         }
     }
 }

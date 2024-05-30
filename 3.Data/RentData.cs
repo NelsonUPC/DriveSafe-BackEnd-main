@@ -30,24 +30,49 @@ public class RentData : IRentData
         }
         return data.id;
     }
-
     public async Task<List<Rent>> GetAllAsync()
     {
         return await _driveSafeDbcontext.Rents.Where(r => r.IsActive).ToListAsync();
     }
-
     public async Task<Rent> GetByIdAsync(int id)
     {
         return await _driveSafeDbcontext.Rents.Where(r => r.id == id).FirstOrDefaultAsync();
     }
-
-    public Task<bool> UpdateAsync(Rent data, int id)
+    public async Task<Rent> GetByUserIdAsync(int user_id)
     {
-        throw new NotImplementedException();
+        return await _driveSafeDbcontext.Rents.FirstOrDefaultAsync(r => r.tenant_id == user_id && r.IsActive == true);
     }
-
-    public Task<bool> DeleteAsync(int id)
+    public async Task<Boolean> UpdateAsync(Rent data, int id)
     {
-        throw new NotImplementedException();
+        using (var transaction = await _driveSafeDbcontext.Database.BeginTransactionAsync())
+        {
+            var rentToUpdate = _driveSafeDbcontext.Rents.Where(r => r.id == id).FirstOrDefault();
+            rentToUpdate.status = data.status;
+            rentToUpdate.start_date = data.start_date;
+            rentToUpdate.end_date = data.end_date;
+            rentToUpdate.vehicle_id = data.vehicle_id;
+            rentToUpdate.owner_id = data.owner_id;
+            rentToUpdate.tenant_id = data.tenant_id;
+            rentToUpdate.pick_up_place = data.pick_up_place;
+            _driveSafeDbcontext.Rents.Update(rentToUpdate);
+            await _driveSafeDbcontext.SaveChangesAsync();
+            await transaction.CommitAsync();
+        }
+        return true;
+    }
+    public async Task<Boolean> DeleteAsync(int id)
+    {
+        using (var transaction = await _driveSafeDbcontext.Database.BeginTransactionAsync())
+        {
+            var rentToDelete = await _driveSafeDbcontext.Rents.FirstOrDefaultAsync(r => r.id == id);
+            if (rentToDelete == null)
+            {
+                return false;
+            }
+            _driveSafeDbcontext.Rents.Remove(rentToDelete);
+            await _driveSafeDbcontext.SaveChangesAsync();
+            await transaction.CommitAsync();
+        }
+        return true;
     }
 }

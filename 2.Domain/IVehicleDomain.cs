@@ -6,4 +6,5 @@ namespace _2.Domain;
 public interface IVehicleDomain
 {
     Task<int> SaveAsync(Vehicle data);
+    Task<Boolean> DeleteAsync(int id);
 }

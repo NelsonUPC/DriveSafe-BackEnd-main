@@ -14,4 +14,8 @@ public class VehicleDomain : IVehicleDomain
     {
         return await _vehicleData.SaveAsync(data);
     }
+    public async Task<Boolean> DeleteAsync(int id)
+    {
+        return await _vehicleData.DeleteAsync(id);
+    }
 }

@@ -7,6 +7,6 @@ public interface IVehicleData
     Task<int> SaveAsync(Vehicle data);
     Task<List<Vehicle>> GetAllAsync();
     Task<Vehicle> GetByIdAsync(int id);
-    Task<Boolean> UpdateAsync(Vehicle data, int id);
+    Task<Vehicle> GetByUserIdAsync(int user_id);
     Task<Boolean> DeleteAsync(int id);
 }

@@ -46,6 +46,16 @@ namespace _1.API.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
+        
+        //GET: api/Rent/GetByUserId/5
+        [HttpGet("GetByUserId/{id}")]
+        public async Task<IActionResult> GetByUserIdAsync(int id)
+        {
+            var data = await _rentData.GetByUserIdAsync(id);
+            var result = _mapper.Map<Rent,RentResponse>(data);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
 
         // POST: api/Rent
         [HttpPost]
@@ -64,9 +74,46 @@ namespace _1.API.Controllers
            }
            catch (Exception ex)
            {
-               //loggear txt,base,cloud 
                return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
            }
+        }
+        
+        // PUT: api/Rent/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] RentRequest data)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest();
+                
+                var rent = _mapper.Map<RentRequest, Rent>(data);
+                
+                var result = await _rentDomain.UpdateAsync(rent, id);
+                
+                if (!result) return NotFound();
+                
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
+            }
+        }
+        
+        // DELETE: api/Rent/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            try
+            {
+                var result = await _rentDomain.DeleteAsync(id);
+                if (!result) return NotFound();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
+            }
         }
     }
 }

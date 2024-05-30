@@ -3,8 +3,6 @@ namespace _1.API.Request;
 public class RentRequest
 {
     [Microsoft.Build.Framework.Required]
-    public int id { get; set; }
-    [Microsoft.Build.Framework.Required]
     public string status { get; set; }
     [Microsoft.Build.Framework.Required]
     public DateOnly start_date { get; set; }

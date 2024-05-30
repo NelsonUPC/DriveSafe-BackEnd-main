@@ -14,4 +14,14 @@ public class RentDomain : IRentDomain
     {
         return await _rentData.SaveAsync(data);
     }
+
+    public async Task<Boolean> UpdateAsync(Rent data, int id)
+    {
+        return await _rentData.UpdateAsync(data, id);
+    }
+
+    public async Task<Boolean> DeleteAsync(int id)
+    {
+        return await _rentData.DeleteAsync(id);
+    }
 }

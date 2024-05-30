@@ -3,8 +3,6 @@ namespace _1.API.Request;
 public class VehicleRequest
 {
     [Microsoft.Build.Framework.Required]
-    public int id { get; set; }
-    [Microsoft.Build.Framework.Required]
     public string brand { get; set; }
     [Microsoft.Build.Framework.Required]
     public string model { get; set; }

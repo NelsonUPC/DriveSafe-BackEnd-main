@@ -7,7 +7,6 @@ namespace _3.Data;
 public class VehicleData : IVehicleData
 {
     private DriveSafeDBContext _driveSafeDbcontext;
-    
     public VehicleData (DriveSafeDBContext driveSafeDbContext)
     {
         _driveSafeDbcontext = driveSafeDbContext;
@@ -31,24 +30,32 @@ public class VehicleData : IVehicleData
         }
         return data.id;
     }
-
     public async Task<List<Vehicle>> GetAllAsync()
     {
         return await _driveSafeDbcontext.Vehicles.Where(v => v.IsActive).ToListAsync();
     }
-
     public async Task<Vehicle> GetByIdAsync(int id)
     {
         return await _driveSafeDbcontext.Vehicles.Where(v => v.id == id).FirstOrDefaultAsync();
     }
 
-    public Task<bool> UpdateAsync(Vehicle data, int id)
+    public async Task<Vehicle> GetByUserIdAsync(int user_id)
     {
-        throw new NotImplementedException();
+        return await _driveSafeDbcontext.Vehicles.FirstOrDefaultAsync(v => v.owner_id == user_id && v.IsActive == true);
     }
 
-    public Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        using (var transaction = await _driveSafeDbcontext.Database.BeginTransactionAsync())
+        {
+            var vehicleToDelete = await _driveSafeDbcontext.Vehicles.FirstOrDefaultAsync(v => v.id == id);
+            if (vehicleToDelete != null)
+            {
+                _driveSafeDbcontext.Vehicles.Remove(vehicleToDelete);
+                await _driveSafeDbcontext.SaveChangesAsync();
+                await transaction.CommitAsync();
+            }
+        }
+        return true;
     }
 }
