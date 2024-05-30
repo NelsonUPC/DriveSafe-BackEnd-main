@@ -31,8 +31,23 @@ public class RentData : IRentData
         return data.id;
     }
 
-    public async Task<List<Rent>> getAllAsync()
+    public async Task<List<Rent>> GetAllAsync()
     {
         return await _driveSafeDbcontext.Rents.Where(r => r.IsActive).ToListAsync();
+    }
+
+    public async Task<Rent> GetByIdAsync(int id)
+    {
+        return await _driveSafeDbcontext.Rents.Where(r => r.id == id).FirstOrDefaultAsync();
+    }
+
+    public Task<bool> UpdateAsync(Rent data, int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> DeleteAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }

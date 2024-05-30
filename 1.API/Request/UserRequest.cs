@@ -1,15 +1,16 @@
+using Newtonsoft.Json;
+
 namespace _1.API.Request;
 
 public class UserRequest
 {
     [Microsoft.Build.Framework.Required]
-    public int id { get; set; }
-    [Microsoft.Build.Framework.Required]
     public string name { get; set; }
     [Microsoft.Build.Framework.Required]
     public string last_name { get; set; }
+    
     [Microsoft.Build.Framework.Required]
-    public string birthdate { get; set; }
+    public DateOnly birthdate { get; set; }
     [Microsoft.Build.Framework.Required]
     public int cellphone { get; set; }
     [Microsoft.Build.Framework.Required]

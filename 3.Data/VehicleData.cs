@@ -32,8 +32,23 @@ public class VehicleData : IVehicleData
         return data.id;
     }
 
-    public async Task<List<Vehicle>> getAllAsync()
+    public async Task<List<Vehicle>> GetAllAsync()
     {
         return await _driveSafeDbcontext.Vehicles.Where(v => v.IsActive).ToListAsync();
+    }
+
+    public async Task<Vehicle> GetByIdAsync(int id)
+    {
+        return await _driveSafeDbcontext.Vehicles.Where(v => v.id == id).FirstOrDefaultAsync();
+    }
+
+    public Task<bool> UpdateAsync(Vehicle data, int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> DeleteAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }

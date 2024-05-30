@@ -31,8 +31,23 @@ public class MaintenanceData : IMaintenanceData
         return data.id;
     }
 
-    public async Task<List<Maintenance>> getAllAsync()
+    public async Task<List<Maintenance>> GetAllAsync()
     {
         return await _driveSafeDbContext.Maintenances.Where(u => u.IsActive).ToListAsync();
+    }
+    
+    public async Task<Maintenance> GetByIdAsync(int id)
+    {
+        return await _driveSafeDbContext.Maintenances.Where(m => m.id == id).FirstOrDefaultAsync();
+    }
+
+    public Task<bool> UpdateAsync(Maintenance data, int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> DeleteAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }

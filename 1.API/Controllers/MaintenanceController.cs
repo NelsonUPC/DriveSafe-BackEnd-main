@@ -32,11 +32,20 @@ namespace _1.API.Controllers
         [HttpGet]
         public async Task<IActionResult>  GetAsync()
         {
-            var data = await _maintenanceData.getAllAsync();
+            var data = await _maintenanceData.GetAllAsync();
             var result = _mapper.Map<List<Maintenance>,List<MaintenanceResponse>>(data);
             return Ok(result);
         }
-
+        
+        //GET: api/Maintenance/5
+        [HttpGet("{id}", Name = "GetMaintenanceById")]
+        public async Task<IActionResult> GetAsyncById(int id)
+        {
+            var data = await _maintenanceData.GetByIdAsync(id);
+            var result = _mapper.Map<Maintenance,MaintenanceResponse>(data);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
         // POST: api/Maintenance
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] MaintenanceRequest data)

@@ -27,11 +27,21 @@ namespace _1.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var data = await _vehicleData.getAllAsync();
+            var data = await _vehicleData.GetAllAsync();
             var result = _mapper.Map<List<Vehicle>,List<VehicleResponse>>(data);
             return Ok(result);
         }
-
+        
+        // GET: api/Vehicle/5
+        [HttpGet("{id}", Name = "GetVehicleById")]
+        public async Task<IActionResult> GetAsyncById(int id)
+        {
+            var data = await _vehicleData.GetByIdAsync(id);
+            var result = _mapper.Map<Vehicle,VehicleResponse>(data);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+        
         // POST: api/Vehicle
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] VehicleRequest data)

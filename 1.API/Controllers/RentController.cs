@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.API.Request;
+using _1.API.Response;
 using _2.Domain;
 using _3.Data;
 using _3.Data.Models;
@@ -31,8 +32,18 @@ namespace _1.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var data = await _rentData.getAllAsync();
-            var result = _mapper.Map<List<Rent>,List<Rent>>(data);
+            var data = await _rentData.GetAllAsync();
+            var result = _mapper.Map<List<Rent>,List<RentResponse>>(data);
+            return Ok(result);
+        }
+        
+        //GET: api/Rent/5
+        [HttpGet("{id}", Name = "GetRentById")]
+        public async Task<IActionResult> GetAsyncById(int id)
+        {
+            var data = await _rentData.GetByIdAsync(id);
+            var result = _mapper.Map<Rent,RentResponse>(data);
+            if (result == null) return NotFound();
             return Ok(result);
         }
 
