@@ -38,9 +38,9 @@ public class RentData : IRentData
     {
         return await _driveSafeDbcontext.Rents.Where(r => r.id == id).FirstOrDefaultAsync();
     }
-    public async Task<Rent> GetByUserIdAsync(int user_id)
+    public async Task<List<Rent>> GetByUserIdAsync(int user_id)
     {
-        return await _driveSafeDbcontext.Rents.FirstOrDefaultAsync(r => r.tenant_id == user_id && r.IsActive == true);
+        return await _driveSafeDbcontext.Rents.Where(r => r.tenant_id == user_id && r.IsActive == true).ToListAsync();
     }
     public async Task<Boolean> UpdateAsync(Rent data, int id)
     {

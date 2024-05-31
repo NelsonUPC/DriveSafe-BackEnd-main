@@ -39,9 +39,9 @@ public class VehicleData : IVehicleData
         return await _driveSafeDbcontext.Vehicles.Where(v => v.id == id).FirstOrDefaultAsync();
     }
 
-    public async Task<Vehicle> GetByUserIdAsync(int user_id)
+    public async Task<List<Vehicle>> GetByUserIdAsync(int user_id)
     {
-        return await _driveSafeDbcontext.Vehicles.FirstOrDefaultAsync(v => v.owner_id == user_id && v.IsActive == true);
+        return await _driveSafeDbcontext.Vehicles.Where(v => v.owner_id == user_id && v.IsActive == true).ToListAsync();
     }
 
     public async Task<bool> DeleteAsync(int id)

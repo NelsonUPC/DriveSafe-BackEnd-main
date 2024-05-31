@@ -52,7 +52,7 @@ namespace _1.API.Controllers
         public async Task<IActionResult> GetByUserIdAsync(int id)
         {
             var data = await _rentData.GetByUserIdAsync(id);
-            var result = _mapper.Map<Rent,RentResponse>(data);
+            var result = _mapper.Map<List<Rent>,List<RentResponse>>(data);
             if (result == null) return NotFound();
             return Ok(result);
         }

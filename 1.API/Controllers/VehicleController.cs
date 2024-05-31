@@ -47,7 +47,7 @@ namespace _1.API.Controllers
         public async Task<IActionResult> GetByUserIdAsync(int id)
         {
             var data = await _vehicleData.GetByUserIdAsync(id);
-            var result = _mapper.Map<Vehicle,VehicleResponse>(data);
+            var result = _mapper.Map<List<Vehicle>,List<VehicleResponse>>(data);
             if (result == null) return NotFound();
             return Ok(result);
         }
