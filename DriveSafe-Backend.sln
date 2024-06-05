@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Domain", "2.Domain\2.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Data", "3.Data\3.Data.csproj", "{5132EB59-D8A7-4B26-849A-56D1C8A2C750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Domain.Test", "2.Domain.Test\2.Domain.Test.csproj", "{0AEEDF1C-6E08-456F-B2DC-8DD5A5D1E774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.API.Test", "1.API.Test\1.API.Test.csproj", "{E41C1E29-DF63-4F76-92B8-D3960F4E7246}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5132EB59-D8A7-4B26-849A-56D1C8A2C750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEEDF1C-6E08-456F-B2DC-8DD5A5D1E774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEEDF1C-6E08-456F-B2DC-8DD5A5D1E774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEEDF1C-6E08-456F-B2DC-8DD5A5D1E774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEEDF1C-6E08-456F-B2DC-8DD5A5D1E774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E41C1E29-DF63-4F76-92B8-D3960F4E7246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E41C1E29-DF63-4F76-92B8-D3960F4E7246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E41C1E29-DF63-4F76-92B8-D3960F4E7246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E41C1E29-DF63-4F76-92B8-D3960F4E7246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

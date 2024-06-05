@@ -20,14 +20,13 @@ namespace _1.API.Controllers
         private readonly IRentData _rentData;
         private readonly IRentDomain _rentDomain;
         private readonly IMapper _mapper;
-        
         public RentController(IRentData rentData, IRentDomain rentDomain, IMapper mapper)
         {
             _rentData = rentData;
             _rentDomain = rentDomain;
             _mapper = mapper;
         }
-        
+
         // GET: api/Rent
         [HttpGet]
         public async Task<IActionResult> GetAsync()
