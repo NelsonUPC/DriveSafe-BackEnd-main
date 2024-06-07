@@ -12,6 +12,10 @@ public class UserDomain : IUserDomain
     }
     public async Task<int> SaveAsync(User data)
     {
+        if (await _userData.IsEmailInUseAsync(data.gmail))
+        {
+            throw new Exception("Email is already in use");
+        }
         return await _userData.SaveAsync(data);
     }
 

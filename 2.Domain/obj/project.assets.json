@@ -1272,11 +1272,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LUIS\\RiderProjects\\DriveSafe-Backend\\2.Domain\\2.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\public\\demo\\DriveSafe-BackEnd-main\\2.Domain\\2.Domain.csproj",
       "projectName": "2.Domain",
-      "projectPath": "C:\\Users\\LUIS\\RiderProjects\\DriveSafe-Backend\\2.Domain\\2.Domain.csproj",
+      "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\public\\demo\\DriveSafe-BackEnd-main\\2.Domain\\2.Domain.csproj",
       "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LUIS\\RiderProjects\\DriveSafe-Backend\\2.Domain\\obj\\",
+      "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\public\\demo\\DriveSafe-BackEnd-main\\2.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1293,8 +1293,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\LUIS\\RiderProjects\\DriveSafe-Backend\\3.Data\\3.Data.csproj": {
-              "projectPath": "C:\\Users\\LUIS\\RiderProjects\\DriveSafe-Backend\\3.Data\\3.Data.csproj"
+            "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\public\\demo\\DriveSafe-BackEnd-main\\3.Data\\3.Data.csproj": {
+              "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\public\\demo\\DriveSafe-BackEnd-main\\3.Data\\3.Data.csproj"
             }
           }
         }

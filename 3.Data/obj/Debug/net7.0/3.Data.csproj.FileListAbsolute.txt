@@ -10,3 +10,15 @@ C:\Users\LUIS\RiderProjects\DriveSafe-Backend\3.Data\obj\Debug\net7.0\3.Data.dll
 C:\Users\LUIS\RiderProjects\DriveSafe-Backend\3.Data\obj\Debug\net7.0\refint\3.Data.dll
 C:\Users\LUIS\RiderProjects\DriveSafe-Backend\3.Data\obj\Debug\net7.0\3.Data.pdb
 C:\Users\LUIS\RiderProjects\DriveSafe-Backend\3.Data\obj\Debug\net7.0\ref\3.Data.dll
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\bin\Debug\net7.0\3.Data.deps.json
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\bin\Debug\net7.0\3.Data.dll
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\bin\Debug\net7.0\3.Data.pdb
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.csproj.AssemblyReference.cache
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.AssemblyInfoInputs.cache
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.AssemblyInfo.cs
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.csproj.CoreCompileInputs.cache
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.dll
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\refint\3.Data.dll
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\3.Data.pdb
+C:\Users\LUIS\OneDrive - Universidad Peruana de Ciencias\Desktop\public\demo\DriveSafe-BackEnd-main\3.Data\obj\Debug\net7.0\ref\3.Data.dll

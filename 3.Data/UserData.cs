@@ -72,4 +72,9 @@ public class UserData : IUserData
         }
         return true;
     }
+    
+    public async Task<bool> IsEmailInUseAsync(string email)
+    {
+        return await _driveSafeDbcontext.Users.AnyAsync(u => u.gmail == email);
+    }
 }

@@ -9,4 +9,5 @@ public interface IUserData
     Task<User> GetByIdAsync(int id);
     Task<Boolean> UpdateAsync(User data, int id);
     Task<Boolean> DeleteAsync(int id);
+    Task<bool> IsEmailInUseAsync(string email);
 }
