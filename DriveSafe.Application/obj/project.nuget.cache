@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "liWXUpQg2gv9h3AOAG7pHhkVpDxlCwd0OCa2vQ5tHmSf0dRxZLNhsHWYedTP+rIAQ4HAwv9pTQYyD+Uv4XEdBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo\\Backend v3.0\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LUIS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
