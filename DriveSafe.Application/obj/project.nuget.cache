@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VQYjold1hsW8MvfwYputMu4eVpkG4E3hOg4GAIcqQKUwrBpIfc7p/X/2V7rcdJe/BrfuYKlROrThWvku8FFGzw==",
+  "dgSpecHash": "2w+UlAPg7WOxRjMn/i6rfn1180l0H32qgLV8cRSQcr1+UASrRI7wmipQoq48M8TOZRQOa4Cgw1SNvWQMH9b64g==",
   "success": true,
   "projectFilePath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo\\Backend v4.0\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LUIS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\bcrypt.net\\0.1.0\\bcrypt.net.0.1.0.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -76,6 +77,10 @@
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\7.0.12\\microsoft.dotnet.scaffolding.shared.7.0.12.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.6.0\\microsoft.identitymodel.abstractions.7.6.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.6.0\\microsoft.identitymodel.jsonwebtokens.7.6.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.identitymodel.logging\\7.6.0\\microsoft.identitymodel.logging.7.6.0.nupkg.sha512",
+    "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.6.0\\microsoft.identitymodel.tokens.7.6.0.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.net.stringtools\\17.3.2\\microsoft.net.stringtools.17.3.2.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -195,5 +200,16 @@
     "C:\\Users\\LUIS\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\LUIS\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt.Net 0.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt.Net",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

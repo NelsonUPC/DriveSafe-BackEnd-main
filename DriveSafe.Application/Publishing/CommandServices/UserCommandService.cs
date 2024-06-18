@@ -4,6 +4,8 @@ using DriveSafe.Domain.Publishing.Models.Commands;
 using DriveSafe.Domain.Publishing.Models.Entities;
 using DriveSafe.Domain.Publishing.Repositories;
 using DriveSafe.Domain.Publishing.Services;
+using DriveSafe.Domain.Security.Models.Commands;
+using DriveSafe.Domain.Security.Services;
 
 namespace DriveSafe.Application.Publishing.CommandServices;
 
@@ -11,11 +13,37 @@ public class UserCommandService : IUserCommandService
 {
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
-    
-    public UserCommandService(IUserRepository userRepository, IMapper mapper)
+    private readonly IEncryptService _encryptService;
+    private readonly ITokenService _tokenService;
+    public UserCommandService(IUserRepository userRepository, IMapper mapper, IEncryptService encryptService, ITokenService tokenService)
     {
         _userRepository = userRepository;
         _mapper = mapper;
+        _encryptService = encryptService;
+        _tokenService = tokenService;
+    }
+    
+    public async Task<User> Handle(SignUpCommand command)
+    {
+        var existingUser = await _userRepository.IsEmailInUseAsync(command.Gmail);
+        if (existingUser) throw new DuplicateNameException("User already exists");
+        var user = _mapper.Map<SignUpCommand, User>(command);
+        user.Password = _encryptService.Encrypt(command.Password);
+        return await _userRepository.Register(user);
+    }
+
+    public async Task<string> Handle(SignInCommand command)
+    {
+        var existingUser = await _userRepository.IsEmailInUseAsync(command.Gmail);
+        if (existingUser != true) throw new DuplicateNameException("User not found");
+        
+        var user = await _userRepository.GetUserByGmailAsync(command.Gmail);
+
+        if (!_encryptService.VerifyPassword(command.Password, user.Password))
+            throw new DuplicateNameException("Invalid password or username");
+        
+        var token = _tokenService.GenerateToken(user, user.Id);
+        return token;
     }
     
     public async Task<int> Handle(CreateUserCommand command)

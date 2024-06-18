@@ -29,7 +29,7 @@ public class ErrorHandlerMiddleware
         var code = HttpStatusCode.InternalServerError;
         var result = ex.Message;
 
-        if (ex is UserNotException)
+        if (ex is UserNotException || ex is DuplicateNameException)
         {
             code = HttpStatusCode.NotFound;
         }

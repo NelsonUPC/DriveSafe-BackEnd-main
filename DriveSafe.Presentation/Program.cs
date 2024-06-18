@@ -1,8 +1,10 @@
 using System.Reflection;
 using DriveSafe.Application.Publishing.CommandServices;
 using DriveSafe.Application.QueryServices;
+using DriveSafe.Application.Security.CommandServices;
 using DriveSafe.Domain.Publishing.Repositories;
 using DriveSafe.Domain.Publishing.Services;
+using DriveSafe.Domain.Security.Services;
 using DriveSafe.Infraestructure.Publishing.Persistence;
 using DriveSafe.Infraestructure.Shared.Context;
 using DriveSafe.Presentation.Mapper;
@@ -36,6 +38,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
+builder.Services.AddScoped<IEncryptService, EncryptService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 //Automapper
 builder.Services.AddAutoMapper(

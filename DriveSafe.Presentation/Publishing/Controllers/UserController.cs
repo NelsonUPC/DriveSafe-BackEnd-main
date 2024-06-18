@@ -5,6 +5,7 @@ using DriveSafe.Domain.Publishing.Models.Commands;
 using DriveSafe.Domain.Publishing.Models.Queries;
 using DriveSafe.Domain.Publishing.Models.Response;
 using DriveSafe.Domain.Publishing.Services;
+using DriveSafe.Domain.Security.Models.Commands;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -53,6 +54,30 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
+        // POST: api/User/Register
+        [HttpPost("Register")]
+        [ProducesResponseType(typeof(UserResponse), 201)]
+        [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(500)]
+        [Produces(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> RegisterAsync([FromBody] SignUpCommand command)
+        {
+            var result = await _userCommandService.Handle(command);
+            return Ok(result);
+        }
+        
+        // POST: api/User/Login
+        [HttpPost("Login")]
+        [ProducesResponseType(typeof(string), 200)]
+        [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(500)]
+        [Produces(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> LoginAsync([FromBody] SignInCommand command)
+        {
+            var result = await _userCommandService.Handle(command);
+            return Ok(result);
+        }
+        
         // POST: api/User
         [HttpPost]
         [ProducesResponseType(typeof(UserResponse), 201)]
@@ -66,11 +91,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
                 if (!ModelState.IsValid) return BadRequest();
     
                 var user = await _userCommandService.Handle(command);
-                
-                /*if (user > 0)
-                    return StatusCode(StatusCodes.Status201Created, user);
-    
-                return BadRequest();*/
                 
                 return CreatedAtRoute("GetUserById", new { id = user }, user);
             }

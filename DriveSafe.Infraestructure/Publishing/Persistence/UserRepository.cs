@@ -14,6 +14,18 @@ public class UserRepository : IUserRepository
         _driveSafeDbContext = driveSafeDbContext;
     }
 
+    public async Task<User> Register(User user)
+    {
+        _driveSafeDbContext.Users.Add(user);
+        await _driveSafeDbContext.SaveChangesAsync();
+        return user;
+    }
+
+    public Task<User> Login(string gmail, string password)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<int> SaveAsync(User data)
     {
         data.IsActive = true;
@@ -84,5 +96,9 @@ public class UserRepository : IUserRepository
     public async Task<bool> IsEmailInUseAsync(string email)
     {
         return await _driveSafeDbContext.Users.AnyAsync(u => u.Gmail == email);
+    }
+    public async Task<User> GetUserByGmailAsync(string email)
+    {
+        return await _driveSafeDbContext.Users.FirstOrDefaultAsync(u => u.Gmail == email);
     }
 }
