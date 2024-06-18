@@ -51,6 +51,10 @@
             "Microsoft.ApplicationInsights": {
               "target": "Package",
               "version": "[2.22.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.12, )"
             }
           },
           "imports": [
