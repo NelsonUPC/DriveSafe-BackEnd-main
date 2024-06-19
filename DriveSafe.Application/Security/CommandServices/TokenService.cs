@@ -2,6 +2,7 @@ using System.Security.Claims;
 using System.Text;
 using DriveSafe.Domain.Publishing.Models.Entities;
 using DriveSafe.Domain.Security.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 
@@ -9,10 +10,17 @@ namespace DriveSafe.Application.Security.CommandServices;
 
 public class TokenService : ITokenService
 {
+    private readonly IConfiguration _configuration;
+    //string secret = "drive-safe-no-como-heisenwolf-gogogogogogogogogogogog";
+    
+    public TokenService(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
     public string GenerateToken(User user, int Id)
     {
-        var secret = "drive-safe-no-como-heisenwolf-gogogogogogogogogogogog";
-        var key = Encoding.ASCII.GetBytes(secret);
+        
+        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:Secret"]); //Debe ser igual que: var key = Encoding.ASCII.GetBytes(secret); (linea 41) 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new[]
@@ -30,8 +38,32 @@ public class TokenService : ITokenService
         return token;
     }
 
-    public Task<int?> ValidateToken(string token)
+    public async Task<int?> ValidateToken(string token)
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(token))
+            return null;
+        var tokenHandler = new JsonWebTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:Secret"]);
+        try
+        {
+            var tokenValidationResult = await tokenHandler.ValidateTokenAsync(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                // Expiration without delay
+                ClockSkew = TimeSpan.Zero
+            });
+
+            var jwtToken = (JsonWebToken)tokenValidationResult.SecurityToken;
+            var userId = int.Parse(jwtToken.Claims.First(claim => claim.Type == ClaimTypes.Sid).Value);
+            return userId;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
+        }
     }
 }

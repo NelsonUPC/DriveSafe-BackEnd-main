@@ -6,6 +6,8 @@ using DriveSafe.Domain.Publishing.Models.Queries;
 using DriveSafe.Domain.Publishing.Models.Response;
 using DriveSafe.Domain.Publishing.Services;
 using DriveSafe.Domain.Security.Models.Commands;
+using DriveSafe.Presentation.Publishing.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +34,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
+        [AuthorizeCustom("admin")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _userQueryService.Handle(new GetAllUsersQuery());
@@ -45,6 +48,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
+        [AuthorizeCustom( "admin", "tenant")]
         public async Task<IActionResult> GetAsyncById(int id)
         {
             var result = await _userQueryService.Handle(new GetUserByIdQuery(id));
@@ -55,6 +59,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         }
         
         // POST: api/User/Register
+        [AllowAnonymous]
         [HttpPost("Register")]
         [ProducesResponseType(typeof(UserResponse), 201)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]
@@ -67,6 +72,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         }
         
         // POST: api/User/Login
+        [AllowAnonymous]
         [HttpPost("Login")]
         [ProducesResponseType(typeof(string), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]

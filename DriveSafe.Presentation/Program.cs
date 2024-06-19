@@ -9,6 +9,7 @@ using DriveSafe.Infraestructure.Publishing.Persistence;
 using DriveSafe.Infraestructure.Shared.Context;
 using DriveSafe.Presentation.Mapper;
 using DriveSafe.Presentation.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -23,6 +24,13 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
+//Configuration
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+    .AddJsonFile("appsettings.json", true, true)
+    .Build();
+
+builder.Services.AddSingleton(configuration);
 
 // Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -33,13 +41,63 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 //builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "DriveSafe API",
+            Description = "An ASP.NET Core Web API for the DriveSafe application",
+            TermsOfService = new Uri("https://example.com/terms"),
+            Contact = new OpenApiContact
+            {
+                Name = "Example Contact",
+                Url = new Uri("https://example.com/contact")
+            },
+            License = new OpenApiLicense
+            {
+                Name = "Example License",
+                Url = new Uri("https://example.com/license")
+            }
+        });
+        options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "bearer"
+        });
+        options.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Id = "Bearer",
+                        Type = ReferenceType.SecurityScheme
+                    }
+                },
+                Array.Empty<string>()
+            }
+        });
+        //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    }
+);
+
+
 //dependency inyection
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddScoped<IEncryptService, EncryptService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
 
 //Automapper
 builder.Services.AddAutoMapper(
@@ -62,8 +120,6 @@ builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
-app.UseMiddleware<ErrorHandlerMiddleware>();
-
 using (var scope = app.Services.CreateScope())
 using (var context = scope.ServiceProvider.GetService<DriveSafeDBContext>())
 {
@@ -77,13 +133,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.UseCors("AllowAllPolicy"); 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthentication();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
+app.UseMiddleware<AuthenticationMiddleware>();
 
 app.MapControllers();
 
-app.UseCors("AllowAllOrigins"); 
 
 app.Run();
