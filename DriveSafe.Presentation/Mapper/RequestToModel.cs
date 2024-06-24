@@ -11,5 +11,8 @@ public class RequestToModel : Profile
     {
         CreateMap<SignUpCommand, User>();
         CreateMap<UpdateUserCommand, User>();
+        CreateMap<CreateVehicleCommand, Vehicle>();
+        CreateMap<UpdateVehicleCommand, Vehicle>();
+        CreateMap<DeleteVehicleCommand, Vehicle>();
     }
 }

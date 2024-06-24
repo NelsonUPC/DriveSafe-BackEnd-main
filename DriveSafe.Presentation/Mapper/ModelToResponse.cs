@@ -9,5 +9,6 @@ public class ModelToResponse : Profile
     public ModelToResponse()
     {
         CreateMap<User, UserResponse>();
+        CreateMap<Vehicle, VehicleResponse>();
     }
 }

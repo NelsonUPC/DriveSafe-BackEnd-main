@@ -20,6 +20,8 @@ public class DriveSafeDBContext : DbContext
     
     public DbSet<User> Users { get; set; }
     
+    public DbSet<Vehicle> Vehicles { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
@@ -35,5 +37,7 @@ public class DriveSafeDBContext : DbContext
         base.OnModelCreating(builder);
         
         builder.Entity<User>().ToTable("Users");
+        
+        builder.Entity<Vehicle>().ToTable("Vehicles");
     }
 }

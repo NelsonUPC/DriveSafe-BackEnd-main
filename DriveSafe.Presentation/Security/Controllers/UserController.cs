@@ -1,4 +1,3 @@
-
 using System.Net.Mime;
 using AutoMapper;
 using DriveSafe.Domain.Publishing.Models.Commands;
@@ -8,7 +7,6 @@ using DriveSafe.Domain.Publishing.Services;
 using DriveSafe.Domain.Security.Models.Commands;
 using DriveSafe.Presentation.Publishing.Filters;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DriveSafe.Presentation.Publishing.Controllers

@@ -69,8 +69,6 @@ public class UserRepository : IUserRepository
             userToUpdate.Gmail = data.Gmail;
             userToUpdate.Password = data.Password;
             
-            Console.WriteLine(userToUpdate);
-            
             _driveSafeDbContext.Users.Update(userToUpdate);
             await _driveSafeDbContext.SaveChangesAsync();
             await transaction.CommitAsync();
