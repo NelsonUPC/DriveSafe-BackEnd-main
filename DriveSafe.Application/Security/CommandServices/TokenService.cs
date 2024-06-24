@@ -37,4 +37,32 @@ public class TokenService : ITokenService
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return token;
     }
+    public async Task<int?> ValidateToken(string token)
+    {
+        if (string.IsNullOrEmpty(token))
+            return null;
+        var tokenHandler = new JsonWebTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:Secret"]);
+        try
+        {
+            var tokenValidationResult = await tokenHandler.ValidateTokenAsync(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                // Expiration without delay
+                ClockSkew = TimeSpan.Zero
+            });
 
+            var jwtToken = (JsonWebToken)tokenValidationResult.SecurityToken;
+            var userId = int.Parse(jwtToken.Claims.First(claim => claim.Type == ClaimTypes.Sid).Value);
+            return userId;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
+        }
+    }
+}
