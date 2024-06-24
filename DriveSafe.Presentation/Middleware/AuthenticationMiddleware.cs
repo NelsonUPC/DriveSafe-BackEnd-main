@@ -53,20 +53,4 @@ public class AuthenticationMiddleware
         await _next(context);  
     }
     
-    private Task<bool> IsAllowAnonymousAsync(HttpContext context)
-    {
-        var endpoint = context.GetEndpoint();
-        if (endpoint == null) return Task.FromResult(false);
-
-        var allowAnonymous = endpoint.Metadata.GetMetadata<IAllowAnonymous>() != null;
-
-        if (!allowAnonymous)
-        {
-            var controllerActionDescriptor = endpoint.Metadata.GetMetadata<ControllerActionDescriptor>();
-            if (controllerActionDescriptor != null)
-                allowAnonymous = controllerActionDescriptor.MethodInfo.GetCustomAttributes(true)
-                    .Any(attr => attr.GetType() == typeof(AllowAnonymousAttribute));
-        }
-        return Task.FromResult(allowAnonymous);
-    }
-}
+   
