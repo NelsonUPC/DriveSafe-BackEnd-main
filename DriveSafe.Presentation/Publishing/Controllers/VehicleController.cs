@@ -29,7 +29,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             _mapper = mapper;
         }
         
-        // GET: api/Vehicle
         [HttpGet]
         [ProducesResponseType(typeof(List<VehicleResponse>), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -43,7 +42,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
 
-        // GET: api/Vehicle/5
         [HttpGet("{id}", Name = "Get")]
         [ProducesResponseType(typeof(VehicleResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -58,7 +56,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // GET: api/Vehicle/Owner/5
         [HttpGet("Owner/{id}")]
         [ProducesResponseType(typeof(VehicleResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -73,7 +70,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
 
-        // POST: api/Vehicle
         [HttpPost]
         [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(void), StatusCodes.Status409Conflict)]
@@ -88,7 +84,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return StatusCode( StatusCodes.Status201Created, result);
         }
 
-        // DELETE: api/Vehicle/5
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
