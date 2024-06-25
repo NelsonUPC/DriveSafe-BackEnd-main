@@ -128,4 +128,18 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         }
         
         
+        // DELETE: api/User/Id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            DeleteUserCommand command = new DeleteUserCommand { Id = id };
+            
+            var result = await _userCommandService.Handle(command);
+            if (result)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+    }
 }
