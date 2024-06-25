@@ -9,5 +9,5 @@ public interface IVehicleQueryService
     
     Task<VehicleResponse?> Handle(GetVehicleByIdQuery query);
     
-    Task<VehicleResponse?> Handle(GetVehicleByUserIdQuery query);
+    Task<List<VehicleResponse?>> Handle(GetVehicleByUserIdQuery query);
 }

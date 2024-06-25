@@ -91,8 +91,8 @@ public class VehicleRepository : IVehicleRepository
         return true;
     }
 
-    public async Task<Vehicle> GetByUserIdAsync(int userId)
+    public async Task<List<Vehicle>> GetByUserIdAsync(int userId)
     {
-        return await _driveSafeDbContext.Vehicles.Where(v => v.OwnerId == userId).FirstOrDefaultAsync();
+        return await _driveSafeDbContext.Vehicles.Where(v => v.OwnerId == userId).ToListAsync();
     }
 }
