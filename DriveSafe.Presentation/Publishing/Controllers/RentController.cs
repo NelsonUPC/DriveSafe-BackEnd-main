@@ -108,7 +108,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
 
             return Ok();
         }
-
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(void), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
