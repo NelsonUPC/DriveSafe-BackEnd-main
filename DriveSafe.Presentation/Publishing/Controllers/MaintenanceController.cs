@@ -29,7 +29,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             _mapper = mapper;
         }
         
-        // GET: api/Maintenance
         [HttpGet]
         [ProducesResponseType(typeof(List<MaintenanceResponse>), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -43,7 +42,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
 
-        // GET: api/Maintenance/5
         [HttpGet("{id}", Name = "GetMaintenanceById")]
         [ProducesResponseType(typeof(List<MaintenanceResponse>), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -59,7 +57,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
 
-        // POST: api/Maintenance
         [HttpPost]
         [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(void), StatusCodes.Status409Conflict)]
