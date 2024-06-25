@@ -62,6 +62,7 @@ public class UserCommandService : IUserCommandService
         var existingUser = await _userRepository.GetByIdAsync(id);
         var user = _mapper.Map<UpdateUserCommand, User>(command);
         if (existingUser == null) throw new ConstraintException("User not found");
+        user.Password = _encryptService.Encrypt(command.Password);
         return await _userRepository.UpdateAsync(user, id);
     }
 

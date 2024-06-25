@@ -35,7 +35,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
-        [AuthorizeCustom("admin", "tenant")]
+        [AuthorizeCustom("admin", "owner")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _vehicleQueryService.Handle(new GetAllVehiclesQuery());
@@ -48,10 +48,25 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(VehicleResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
-        [AuthorizeCustom("admin")]
+        [AuthorizeCustom("admin", "owner")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _vehicleQueryService.Handle(new GetVehicleByIdQuery(id));
+            
+            if (result==null) StatusCode(StatusCodes.Status404NotFound);
+
+            return Ok(result);
+        }
+        
+        // GET: api/Vehicle/Owner/5
+        [HttpGet("Owner/{id}")]
+        [ProducesResponseType(typeof(VehicleResponse), 200)]
+        [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
+        [AuthorizeCustom("admin", "owner")]
+        public async Task<IActionResult> GetByUserIdAsync(int id)
+        {
+            var result = await _vehicleQueryService.Handle(new GetVehicleByUserIdQuery(id));
             
             if (result==null) StatusCode(StatusCodes.Status404NotFound);
 
@@ -63,7 +78,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(void), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
-        [AuthorizeCustom("admin","tenant")]
+        [AuthorizeCustom("admin","owner")]
         public async Task <IActionResult> PostAsync([FromBody] CreateVehicleCommand command)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -73,16 +88,21 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return StatusCode( StatusCodes.Status201Created, result);
         }
 
-        // PUT: api/Vehicle/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
         // DELETE: api/Vehicle/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
+        [AuthorizeCustom("admin","owner")]
+        public async Task<IActionResult> DeleteAsync(int id)
         {
+            DeleteVehicleCommand command = new DeleteVehicleCommand {Id = id};
+            
+            var result = await _vehicleCommandService.Handle(command);
+            
+            if (!result) return StatusCode(StatusCodes.Status404NotFound);
+            
+            return NoContent();
         }
     }
 }

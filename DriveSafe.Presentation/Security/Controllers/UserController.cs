@@ -32,7 +32,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
-        [AuthorizeCustom("admin")]
+        [AuthorizeCustom("admin", "tenant", "owner")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _userQueryService.Handle(new GetAllUsersQuery());
@@ -46,7 +46,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
-        [AuthorizeCustom( "admin", "tenant")]
+        [AuthorizeCustom( "admin", "tenant", "owner")]
         public async Task<IActionResult> GetAsyncById(int id)
         {
             var result = await _userQueryService.Handle(new GetUserByIdQuery(id));
@@ -113,6 +113,11 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         
         // PUT: api/User/Id
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(UserResponse), 200)]
+        [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
+        [ProducesResponseType(500)]
+        [Produces(MediaTypeNames.Application.Json)]
+        [AuthorizeCustom( "admin", "tenant", "owner")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] UpdateUserCommand command)
         {
             if (!ModelState.IsValid) return StatusCode(StatusCodes.Status400BadRequest);

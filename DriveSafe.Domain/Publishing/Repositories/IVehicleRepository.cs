@@ -9,4 +9,5 @@ public interface IVehicleRepository
     Task<int> SaveAsync(Vehicle data);
     Task<bool> UpdateAsync(Vehicle data, int id);
     Task<bool> DeleteAsync(int id);
+    Task<Vehicle> GetByUserIdAsync(int userId);
 }
