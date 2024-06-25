@@ -83,13 +83,10 @@ builder.Services.AddSwaggerGen(options =>
                 Array.Empty<string>()
             }
         });
-        //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-        //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
     }
 );
 
 
-//dependency inyection
 builder.Services.AddScoped<IMaintenanceRepository, MaintenanceRepository>();
 builder.Services.AddScoped<IMaintenanceCommandService, MaintenanceCommandService>();
 builder.Services.AddScoped<IMaintenanceQueryService, MaintenanceQueryService>();
@@ -108,13 +105,11 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
 
-//Automapper
 builder.Services.AddAutoMapper(
     typeof(RequestToModel),
     typeof(ModelToRequest),
     typeof(ModelToResponse));
 
-//Connect DB
 var connectionString = builder.Configuration.GetConnectionString("DriveSafeDB");
 
 builder.Services.AddDbContext<DriveSafeDBContext>(
