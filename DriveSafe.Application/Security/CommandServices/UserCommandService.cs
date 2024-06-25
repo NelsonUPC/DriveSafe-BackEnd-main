@@ -52,8 +52,6 @@ public class UserCommandService : IUserCommandService
         
         var existingUser = await _userRepository.IsEmailInUseAsync(command.Gmail);
         
-        //if (existingUser != null) throw new ConstraintException("Email already in use");
-        
         return await _userRepository.SaveAsync(user);
     }
 

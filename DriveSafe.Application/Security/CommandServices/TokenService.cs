@@ -11,7 +11,6 @@ namespace DriveSafe.Application.Security.CommandServices;
 public class TokenService : ITokenService
 {
     private readonly IConfiguration _configuration;
-    //string secret = "drive-safe-no-como-heisenwolf-gogogogogogogogogogogog";
     
     public TokenService(IConfiguration configuration)
     {
@@ -20,7 +19,7 @@ public class TokenService : ITokenService
     public string GenerateToken(User user, int Id)
     {
         
-        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:Secret"]); //Debe ser igual que: var key = Encoding.ASCII.GetBytes(secret); (linea 41) 
+        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:Secret"]); 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new[]

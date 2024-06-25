@@ -26,7 +26,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             _mapper = mapper;
         }
         
-        // GET: api/User
         [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(typeof(List<UserResponse>), 200)]
@@ -40,7 +39,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // GET: api/User/Id
         [HttpGet("{id}", Name = "GetUserById")]
         [ProducesResponseType(typeof(UserResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -56,7 +54,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // POST: api/User/Register
         [AllowAnonymous]
         [HttpPost("Register")]
         [ProducesResponseType(typeof(UserResponse), 201)]
@@ -69,7 +66,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // POST: api/User/Login
         [AllowAnonymous]
         [HttpPost("Login")]
         [ProducesResponseType(typeof(string), 200)]
@@ -82,7 +78,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // POST: api/User
         [HttpPost]
         [ProducesResponseType(typeof(UserResponse), 201)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]
@@ -100,10 +95,8 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             }
             catch (Exception ex)
             {
-                // Log the inner exception if it exists
                 if (ex.InnerException != null)
                 {
-                    // Replace this with your preferred logging method
                     Console.WriteLine(ex.InnerException);
                 }
                 
@@ -111,7 +104,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             }
         }
         
-        // PUT: api/User/Id
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(UserResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -127,7 +119,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok();
         }
         
-        // DELETE: api/User/Id
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

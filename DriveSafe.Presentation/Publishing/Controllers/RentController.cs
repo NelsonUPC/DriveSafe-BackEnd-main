@@ -30,7 +30,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             _mapper = mapper;
         }
         
-        // GET: api/Rent
         [HttpGet]
         [ProducesResponseType(typeof(List<RentResponse>), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -44,7 +43,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
 
-        // GET: api/Rent/5
         [HttpGet("{id}", Name = "GetRentById")]
         [ProducesResponseType(typeof(RentResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -59,7 +57,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        //GET: api/Rent/Tenant/5
         [HttpGet("Tenant/{id}", Name = "GetRentByUserId")]
         [ProducesResponseType(typeof(RentResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -74,7 +71,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok(result);
         }
         
-        // POST: api/Rent
         [HttpPost]
         [ProducesResponseType(typeof(int), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status400BadRequest)]
@@ -98,7 +94,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
 
-        // PUT: api/Rent/5
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(void), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
@@ -114,7 +109,6 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok();
         }
 
-        // DELETE: api/Rent/5
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(void), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
