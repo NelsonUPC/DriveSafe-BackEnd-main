@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj": {}
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj": {
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
+        "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
         "projectName": "DriveSafe.Application",
-        "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\obj\\",
+        "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj",
+        "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
               }
             }
           }
@@ -119,26 +121,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Usuario\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj",
         "projectName": "DriveSafe.Domain",
-        "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\obj\\",
+        "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj",
+        "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -172,34 +176,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Usuario\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj": {
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj",
         "projectName": "DriveSafe.Infraestructure",
-        "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\obj\\",
+        "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
               }
             }
           }
@@ -247,43 +253,45 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Usuario\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj": {
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj",
         "projectName": "DriveSafe.Presentation",
-        "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\obj\\",
+        "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\DriveSafe.Presentation.csproj",
+        "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Application\\DriveSafe.Application.csproj"
               },
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Domain\\DriveSafe.Domain.csproj"
               },
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Infraestructure\\DriveSafe.Infraestructure.csproj"
               },
-              "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj": {
-                "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj"
+              "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj": {
+                "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj"
               }
             }
           }
@@ -374,26 +382,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Usuario\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj": {
+    "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj",
         "projectName": "DriveSafe.Shared",
-        "projectPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Usuario\\Documents\\riderproejcts\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\obj\\",
+        "projectPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\DriveSafe.Shared.csproj",
+        "packagesPath": "C:\\Users\\LUIS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIS\\OneDrive - Universidad Peruana de Ciencias\\Desktop\\Github Trabajo (Apps Web)\\Backend\\DriveSafe-BackEnd-main\\DriveSafe.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -427,7 +437,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Usuario\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

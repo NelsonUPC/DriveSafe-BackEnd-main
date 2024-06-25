@@ -29,10 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Security\Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\DriveSafe.Application\DriveSafe.Application.csproj" />
       <ProjectReference Include="..\DriveSafe.Domain\DriveSafe.Domain.csproj" />
       <ProjectReference Include="..\DriveSafe.Infraestructure\DriveSafe.Infraestructure.csproj" />

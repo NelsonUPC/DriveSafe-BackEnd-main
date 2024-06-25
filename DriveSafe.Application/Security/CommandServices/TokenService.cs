@@ -37,7 +37,6 @@ public class TokenService : ITokenService
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return token;
     }
-
     public async Task<int?> ValidateToken(string token)
     {
         if (string.IsNullOrEmpty(token))
