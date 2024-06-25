@@ -76,27 +76,5 @@ public class UserRepository : IUserRepository
         return true;
     }
 
-    public async Task<Boolean> DeleteAsync(int id)
-    {
-        using (var transaction = await _driveSafeDbContext.Database.BeginTransactionAsync())
-        {
-            var userToDelete = await _driveSafeDbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
-            if (userToDelete != null)
-            {
-                _driveSafeDbContext.Users.Remove(userToDelete);
-                await _driveSafeDbContext.SaveChangesAsync();
-                await transaction.CommitAsync();
-            }
-        }
-        return true;
-    }
-
-    public async Task<bool> IsEmailInUseAsync(string email)
-    {
-        return await _driveSafeDbContext.Users.AnyAsync(u => u.Gmail == email);
-    }
-    public async Task<User> GetUserByGmailAsync(string email)
-    {
-        return await _driveSafeDbContext.Users.FirstOrDefaultAsync(u => u.Gmail == email);
-    }
+    
 }
