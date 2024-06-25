@@ -79,8 +79,8 @@ public class RentRepository : IRentRepository
         return true;
     }
 
-    public async Task<Rent> GetByUserIdAsync(int userId)
+    public async Task<List<Rent>> GetByUserIdAsync(int userId)
     {
-        return await _driveSafeDbContext.Rents.Where(r => r.TenantId == userId).FirstOrDefaultAsync();
+        return await _driveSafeDbContext.Rents.Where(r => r.TenantId == userId).ToListAsync();
     }
 }

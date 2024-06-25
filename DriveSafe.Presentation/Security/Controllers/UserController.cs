@@ -27,12 +27,12 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         }
         
         // GET: api/User
+        [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(typeof(List<UserResponse>), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
-        [AuthorizeCustom("admin", "tenant", "owner")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _userQueryService.Handle(new GetAllUsersQuery());

@@ -35,7 +35,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(500)]
         [Produces(MediaTypeNames.Application.Json)]
-        [AuthorizeCustom("admin", "owner")]
+        [AuthorizeCustom("admin", "owner", "tenant")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _vehicleQueryService.Handle(new GetAllVehiclesQuery());
@@ -48,7 +48,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(VehicleResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
-        [AuthorizeCustom("admin", "owner")]
+        [AuthorizeCustom("admin", "owner", "tenant")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await _vehicleQueryService.Handle(new GetVehicleByIdQuery(id));
@@ -63,7 +63,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
         [ProducesResponseType(typeof(VehicleResponse), 200)]
         [ProducesResponseType(typeof(void),statusCode: StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(void),StatusCodes.Status500InternalServerError)]
-        [AuthorizeCustom("admin", "owner")]
+        [AuthorizeCustom("admin", "owner", "tenant")]
         public async Task<IActionResult> GetByUserIdAsync(int id)
         {
             var result = await _vehicleQueryService.Handle(new GetVehicleByUserIdQuery(id));

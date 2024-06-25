@@ -7,5 +7,5 @@ public interface IRentQueryService
 {
     Task<List<RentResponse>?> Handle(GetAllRentsQuery query);
     Task<RentResponse?> Handle(GetRentByIdQuery query);
-    Task<RentResponse?> Handle(GetRentByUserIdQuery query);
+    Task<List<RentResponse?>> Handle(GetRentByUserIdQuery query);
 }

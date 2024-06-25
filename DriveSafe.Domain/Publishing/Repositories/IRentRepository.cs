@@ -9,5 +9,5 @@ public interface IRentRepository
     Task<int> SaveAsync(Rent data);
     Task<bool> UpdateAsync(Rent data, int id);
     Task<bool> DeleteAsync(int id);
-    Task<Rent> GetByUserIdAsync(int userId);
+    Task<List<Rent>> GetByUserIdAsync(int userId);
 }

@@ -31,10 +31,10 @@ public class RentQueryService : IRentQueryService
         return result;
     }
 
-    public async Task<RentResponse?> Handle(GetRentByUserIdQuery query)
+    public async Task<List<RentResponse?>> Handle(GetRentByUserIdQuery query)
     {
         var data = await _rentRepository.GetByUserIdAsync(query.Id);
-        var result = _mapper.Map<Rent, RentResponse>(data);
+        var result = _mapper.Map<List<Rent>, List<RentResponse>>(data);
         return result;
     }
 }
