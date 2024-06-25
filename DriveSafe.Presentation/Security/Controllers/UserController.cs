@@ -127,6 +127,7 @@ namespace DriveSafe.Presentation.Publishing.Controllers
             return Ok();
         }
         
+        
         // DELETE: api/User/Id
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
