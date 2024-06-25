@@ -90,6 +90,12 @@ builder.Services.AddSwaggerGen(options =>
 
 
 //dependency inyection
+builder.Services.AddScoped<IMaintenanceRepository, MaintenanceRepository>();
+builder.Services.AddScoped<IMaintenanceCommandService, MaintenanceCommandService>();
+builder.Services.AddScoped<IMaintenanceQueryService, MaintenanceQueryService>();
+builder.Services.AddScoped<IRentRepository, RentRepository>();
+builder.Services.AddScoped<IRentCommandService, RentCommandService>();
+builder.Services.AddScoped<IRentQueryService, RentQueryService>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IVehicleCommandService, VehicleCommandService>();
 builder.Services.AddScoped<IVehicleQueryService, VehicleQueryService>();

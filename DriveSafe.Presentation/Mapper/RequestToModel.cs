@@ -14,5 +14,9 @@ public class RequestToModel : Profile
         CreateMap<CreateVehicleCommand, Vehicle>();
         CreateMap<UpdateVehicleCommand, Vehicle>();
         CreateMap<DeleteVehicleCommand, Vehicle>();
+        CreateMap<CreateRentCommand, Rent>();
+        CreateMap<UpdateRentCommand, Rent>();
+        CreateMap<DeleteRentCommand, Rent>();
+        CreateMap<CreateMaintenanceCommand, Maintenance>();
     }
 }

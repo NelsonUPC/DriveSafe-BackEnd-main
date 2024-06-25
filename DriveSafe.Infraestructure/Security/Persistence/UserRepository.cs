@@ -75,7 +75,7 @@ public class UserRepository : IUserRepository
         }
         return true;
     }
-
+    
     public async Task<Boolean> DeleteAsync(int id)
     {
         using (var transaction = await _driveSafeDbContext.Database.BeginTransactionAsync())
@@ -99,4 +99,5 @@ public class UserRepository : IUserRepository
     {
         return await _driveSafeDbContext.Users.FirstOrDefaultAsync(u => u.Gmail == email);
     }
+    
 }

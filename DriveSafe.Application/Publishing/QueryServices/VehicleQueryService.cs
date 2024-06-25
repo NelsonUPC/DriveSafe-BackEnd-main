@@ -21,9 +21,7 @@ public class VehicleQueryService : IVehicleQueryService
     public async Task<List<VehicleResponse>?> Handle(GetAllVehiclesQuery query)
     {
         var data = await _vehicleRepository.GetAllAsync();
-        
         var result = _mapper.Map<List<Vehicle>, List<VehicleResponse>>(data);
-
         return result;
     }
 
@@ -31,6 +29,14 @@ public class VehicleQueryService : IVehicleQueryService
     {
         var data = await _vehicleRepository.GetByIdAsync(query.Id);
         var result = _mapper.Map<Vehicle, VehicleResponse>(data);
+        return result;
+    }
+
+    public async Task<List<VehicleResponse?>> Handle(GetVehicleByUserIdQuery query)
+    {
+        
+        var data = await _vehicleRepository.GetByUserIdAsync(query.Id);
+        var result = _mapper.Map<List<Vehicle>, List<VehicleResponse>>(data);
         return result;
     }
 }

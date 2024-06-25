@@ -84,11 +84,15 @@ public class VehicleRepository : IVehicleRepository
         
         if (existingVehicle != null)
         {
-            existingVehicle.IsActive = false;
-            _driveSafeDbContext.Vehicles.Update(existingVehicle);
+            _driveSafeDbContext.Vehicles.Remove(existingVehicle);
         }
         
         await _driveSafeDbContext.SaveChangesAsync();
         return true;
+    }
+
+    public async Task<List<Vehicle>> GetByUserIdAsync(int userId)
+    {
+        return await _driveSafeDbContext.Vehicles.Where(v => v.OwnerId == userId).ToListAsync();
     }
 }
